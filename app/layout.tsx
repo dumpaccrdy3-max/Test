@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ShortTree - Shortlink & Link-in-bio",
-  description: "Web app untuk shortlink seperti Bitly dan listlink seperti Linktree."
+  title: "CogniText - AI Workspace for Writers",
+  description:
+    "CogniText adalah workspace kolaboratif dan editor teks cerdas yang menggabungkan AI generatif dengan pengalaman seperti Google Docs dan IDE untuk penulis."
 };
 
 export default function RootLayout({
@@ -13,7 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
-      <body className="min-h-screen">{children}</body>
+      <body className="min-h-screen bg-slate-950 text-slate-50">
+        {children}
+      </body>
     </html>
   );
 }

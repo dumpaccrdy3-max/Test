@@ -3,5 +3,68 @@
 @tailwind utilities;
 
 body {
-  @apply bg-slate-50 text-slate-900;
+  @apply antialiased;
+}
+
+/* CogniText editor styles */
+
+.cognitext-shell {
+  @apply min-h-screen flex flex-col bg-slate-950 text-slate-50;
+}
+
+.cognitext-main {
+  @apply flex-1 flex flex-col md:flex-row gap-4 md:gap-6 max-w-6xl mx-auto w-full px-4 pb-6;
+}
+
+.cognitext-panel {
+  @apply bg-slate-900/60 border border-slate-800 rounded-2xl shadow-xl;
+}
+
+.cognitext-editor {
+  @apply w-full h-full outline-none text-sm md:text-base leading-relaxed;
+}
+
+.cognitext-editor[data-empty="true"]::before {
+  content: attr(data-placeholder);
+  @apply text-slate-500;
+  pointer-events: none;
+}
+
+/* Custom context menu for AI actions */
+
+.cognitext-context-menu {
+  @apply fixed z-50 bg-slate-900 text-slate-50 text-xs rounded-md shadow-lg border border-slate-700 py-1;
+  min-width: 180px;
+}
+
+.cognitext-context-menu button {
+  @apply w-full text-left px-3 py-1.5 hover:bg-slate-700 cursor-pointer;
+}
+
+/* Inline AI change suggestions */
+
+.ai-change {
+  @apply inline-flex items-center gap-2 px-1.5 py-0.5 rounded-md bg-emerald-900/20 border border-emerald-500/40;
+}
+
+.ai-change del {
+  @apply text-red-400 line-through;
+}
+
+.ai-change ins {
+  @apply text-emerald-400 no-underline;
+}
+
+.ai-change-actions button {
+  @apply text-[10px] px-2 py-0.5 rounded-full border border-slate-500 text-slate-100 hover:bg-slate-100/10;
+}
+
+/* Modal overlay */
+
+.cognitext-modal-backdrop {
+  @apply fixed inset-0 bg-black/60 z-40 flex items-center justify-center;
+}
+
+.cognitext-modal {
+  @apply bg-slate-950 border border-slate-800 rounded-2xl shadow-2xl w-full max-w-md p-5;
 }
